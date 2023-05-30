@@ -15,12 +15,14 @@
           <option value="beauty">Beauty</option>
         </select><br>
         <button> Add Product </button>
+        <link rel="stylesheet" href="api.css">
     </form>
     <ul id='listOfUsers'> </ul>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js"></script>
     <script>
         window.addEventListener("DOMContentLoaded", () => {
-            axios.get("https://crudcrud.com/api/f730e2fdc7de41daaf2ca99927826b12/SellerWebsite")
+            axios.get("https://crudcrud.com/api/6ed174986d5e4593ade4b0b9d3b8d44c/SellerWebsite")
+
                 .then((response) => {
                     console.log(response)
 
@@ -46,7 +48,7 @@
                 category
             }
 
-            axios.post("https://crudcrud.com/api/f730e2fdc7de41daaf2ca99927826b12/SellerWebsite", obj)
+            axios.post("https://crudcrud.com/api/6ed174986d5e4593ade4b0b9d3b8d44c", obj)
                 .then((response) => {
                     console.log(response)
                     showNewUserOnScreen(response.data)
@@ -86,7 +88,7 @@
         }
 
         function deleteUser(userId) {
-            axios.delete(`https://crudcrud.com/api/f730e2fdc7de41daaf2ca99927826b12/SellerWebsite/${userId}`)
+            axios.delete(`https://crudcrud.com/api/96f483d7e6524648bdf051072a354986/${userId}`)
                 .then((response) => {
                     removeUserFromScreen(userId)
                 })
